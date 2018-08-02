@@ -28,14 +28,14 @@ class Car(object):
 			# charge process bittiginde tekrar drive process baslatilabilir
 			print('Start driving at %d' %self.env.now)
 			trip_duration = 2
-			yield.self.env.timeout(trip_duration)
+			yield self.env.timeout(trip_duration)
 
-	def charge(self):
+	def charge(self, duration):
 		yield self.env.timeout(duration)		
 
-def main:
+def main():
 	env = simpy.Environment()
-	car = car(env)
+	car = Car(env)
 	env.run(until=15)
 
 if __name__ == '__main__':
